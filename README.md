@@ -4,6 +4,8 @@
 
 Add new students or teachers. Add new books. Save records of who borrowed a given book and when.
 
+![image](https://user-images.githubusercontent.com/88522494/179556839-06b93f1e-80de-4e94-a133-d6d94bfd66cb.png)
+
 ## Built With
 
 - Ruby
