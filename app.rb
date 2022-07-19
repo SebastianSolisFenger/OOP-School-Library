@@ -70,7 +70,45 @@ class App
   def action_list_books
     list_book
     p '\n\n Press enter to continue...'
+    gets.chomp
+    run
+  end
+
+  def action_list_people
+    list_people
+    p '\n\n Press enter to continue...'
     gets
     run
+  end
+
+  def my_permission(my_char)
+    case my_char
+    when 'n'
+      false
+    when 'y'
+      true
+    end
+  end
+
+  def create_teacher
+    print 'Age: '
+    age = gets.chomp
+    print 'Name: '
+    name = gets.chomp
+    print 'Specialization: '
+    specialization = gets.chomp
+    teacher = Teacher.new(age, name, nil, specialization)
+    @people.push(teacher)
+  end
+
+  def create_student
+    print 'Age: '
+    age = gets.chomp
+    print 'Name: '
+    name = gets.chomp
+    print 'Has parent permission? [Y/N]: '
+    permission = gets.chomp
+    student = Student.new(age, name, my_permission(permission), nil)
+    @people.push(student)
   end
 end
