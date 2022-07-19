@@ -60,4 +60,17 @@ class App
       puts "#{index}) Title: \"#{x.title}\", Author: #{x.author}"
     end
   end
+
+  def list_people
+    @people.each_with_index do |x, index|
+      puts "#{index}) [#{x.class.name}] Name: #{x.name}, ID: #{x.id}, Age: #{x.age}"
+    end
+  end
+
+  def action_list_books
+    list_book
+    p '\n\n Press enter to continue...'
+    gets
+    run
+  end
 end
