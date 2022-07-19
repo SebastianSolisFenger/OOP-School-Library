@@ -111,4 +111,28 @@ class App
     student = Student.new(age, name, my_permission(permission), nil)
     @people.push(student)
   end
+
+  def create_person
+    print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
+    person_type = gets.chomp
+    case person_type
+    when '1'
+      create_student
+    when '2'
+      create_teacher
+    end
+    puts "Person created successfully!\n\n"
+    gets
+    run
+  end
+
+  def create_book
+    print 'Title: '
+    title = gets.chomp
+    print 'Author: '
+    author = gets.chomp
+    new_book = Book.new(title, author)
+    @my_books.push(new_book)
+    run
+  end
 end
