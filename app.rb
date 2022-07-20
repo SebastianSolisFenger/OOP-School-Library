@@ -150,4 +150,18 @@ class App
     puts 'Rental added successfully!'
     run
   end
+
+  def list_rental
+    me = nil
+    print '\nID of person: '
+    person_id = gets.chomp
+    @people.each do |x|
+      me = x if x.id == person_id.to_i
+    end
+    me.rentals.each do |x|
+      puts x.date
+    end
+    puts
+    run
+  end
 end
