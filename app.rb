@@ -156,7 +156,8 @@ class App
     me.rentals.each do |rental|
       puts "Date: #{rental.date}, Book: #{rental.book.title} by Author: #{rental.book.author} "
     end
-    puts
+    puts 'Press any key to continue..'
     run
+    puts 'Press any key to continue..'
   end
 end
