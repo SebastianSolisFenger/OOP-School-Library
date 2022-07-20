@@ -4,6 +4,7 @@ require './person'
 require './book'
 require './teacher'
 require './student'
+require './rental'
 
 # $my_books = []
 
@@ -31,7 +32,7 @@ class App
     p '5 - Create a rental'
     p '6 - List all rentals for a given person id'
     p "7 - Exit\n\n"
-    action(gets.chomp)
+    gets.chomp
   end
 
   def run
@@ -68,7 +69,7 @@ class App
   end
 
   def action_list_books
-    list_book
+    list_books
     p '\n\n Press enter to continue...'
     gets.chomp
     run
@@ -83,9 +84,9 @@ class App
 
   def my_permission(my_char)
     case my_char
-    when 'n'
+    when 'N'
       false
-    when 'y'
+    when 'Y'
       true
     end
   end
