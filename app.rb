@@ -1,19 +1,8 @@
-# require './capitalize_decorator'
-# require './trimmer_decorator'
 require './person'
 require './book'
 require './teacher'
 require './student'
 require './rental'
-
-# $my_books = []
-
-# person = Person.new(22, 'maximilianus')
-# puts person.correct_name
-# capitalized_person = CapitalizeDecorator.new(person)
-# puts capitalized_person.correct_name
-# capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
-# puts capitalized_trimmed_person.correct_name
 
 class App
   def initialize
@@ -31,7 +20,7 @@ class App
     p '4 - Create a book'
     p '5 - Create a rental'
     p '6 - List all rentals for a given person id'
-    p "7 - Exit\n\n"
+    p '7 - Exit'
     gets.chomp
   end
 
@@ -49,7 +38,7 @@ class App
     when '5'
       create_rental
     when '6'
-      list_rental
+      rental_by_id
     else
       p 'Thanks for using this App!'
       exit
@@ -57,9 +46,7 @@ class App
   end
 
   def list_books
-    @my_books.each_with_index do |x, index|
-      puts "#{index}) Title: \"#{x.title}\", Author: #{x.author}"
-    end
+    @my_books.each_with_index.map { |book, i| puts "#{i}) Title: #{book.title}, Author: #{book.author} " }
   end
 
   def list_people
@@ -69,15 +56,16 @@ class App
   end
 
   def action_list_books
+    p 'Book successfully created!'
     list_books
-    p '\n\n Press enter to continue...'
+    p 'Press enter to continue...!'
     gets.chomp
     run
   end
 
   def action_list_people
     list_people
-    p '\n\n Press enter to continue...'
+    p 'Press enter to continue...!'
     gets
     run
   end
@@ -122,7 +110,8 @@ class App
     when '2'
       create_teacher
     end
-    puts "Person created successfully!\n\n"
+    puts 'Person created successfully!'
+    puts 'Press enter to continue..!'
     gets
     run
   end
@@ -138,13 +127,13 @@ class App
   end
 
   def create_rental
-    puts '\n Select a book from the following list by number'
+    puts "\n Select a book from the following list by number"
     list_books
     book_index = gets.chomp
-    puts '\n Select a person from the following list by number'
+    puts "\n Select a person from the following list by number"
     list_people
     person_index = gets.chomp
-    print '\n Date(yyyy/mm/dd): '
+    print "\n Date(yyyy/mm/dd): "
     rental_date = gets.chomp
     new_rental = Rental.new(rental_date, @my_books[book_index.to_i], @people[person_index.to_i])
     @my_rentals.push(new_rental)
@@ -152,17 +141,17 @@ class App
     run
   end
 
-  def list_rental
-    me = nil
-    print '\nID of person: '
-    person_id = gets.chomp
-    @people.each do |x|
-      me = x if x.id == person_id.to_i
+  def rental_by_id
+    @people.each_with_index.map do |person, i|
+      puts "#{i}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, age: #{person.age}"
     end
-    me.rentals.each do |x|
-      puts x.date
+    print 'Please, write the ID of the person: '
+    person_id = gets.chomp.to_i
+    puts 'Rentals: '
+    @my_rentals.each do |rental|
+      if rental.person.id == person_id
+        puts "Date: #{rental.date}, Book: #{rental.book.title} by Author: #{rental.book.author} "
+      end
     end
-    puts
-    run
   end
 end

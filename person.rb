@@ -1,5 +1,3 @@
-# require './nameable'
-
 class Person
   attr_reader :id, :rentals
   attr_accessor :name, :age
