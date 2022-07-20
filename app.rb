@@ -55,7 +55,7 @@ class App
     end
   end
 
-  def list_book
+  def list_books
     @my_books.each_with_index do |x, index|
       puts "#{index}) Title: \"#{x.title}\", Author: #{x.author}"
     end
@@ -133,6 +133,21 @@ class App
     author = gets.chomp
     new_book = Book.new(title, author)
     @my_books.push(new_book)
+    run
+  end
+
+  def create_rental
+    puts '\n Select a book from the following list by number'
+    list_books
+    book_index = gets.chomp
+    puts '\n Select a person from the following list by number'
+    list_people
+    person_index = gets.chomp
+    print '\n Date(yyyy/mm/dd): '
+    rental_date = gets.chomp
+    new_rental = Rental.new(rental_date, @my_books[book_index.to_i], @people[person_index.to_i])
+    @my_rentals.push(new_rental)
+    puts 'Rental added successfully!'
     run
   end
 end
