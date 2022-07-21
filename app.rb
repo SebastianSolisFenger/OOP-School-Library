@@ -27,9 +27,9 @@ class App
   def run
     choice = show_menu
     case choice
-    when '1'
+    when 1
       action_list_books
-    when '2'
+    when 2
       action_list_people
     when '3'
       create_person
