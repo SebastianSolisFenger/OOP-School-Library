@@ -1,6 +1,5 @@
 class ListBooks
   def initialize(state)
-    @state = state
     @book_list = state[:book_list]
   end
 
