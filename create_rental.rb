@@ -1,9 +1,8 @@
 class CreateRental
   def initialize(state)
-    @state = state
-    @book_list = @state[:book_list]
-    @people_list = @state[:people_list]
-    @rental_list = @state[:rental_list]
+    @book_list = state[:book_list]
+    @people_list = state[:people_list]
+    @rental_list = state[:rental_list]
   end
 
   def ask_user_input
