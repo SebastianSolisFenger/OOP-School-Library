@@ -8,7 +8,7 @@ class CreateRental
     @rental_list = state[:rental_list]
     @list_books = ListBooks.new(state)
     @list_people = ListPeople.new(state)
-  end 
+  end
 
   def ask_user_input
     p 'Select a book from the following list by number'
