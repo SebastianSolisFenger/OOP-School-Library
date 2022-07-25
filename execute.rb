@@ -9,14 +9,13 @@ require_relative './exit'
 
 class Execute
   def initialize(state)
-    @state = state
-    @people = ListPeople.new(@state)
-    @person = CreatePerson.new(@state)
-    @list_books = ListBooks.new(@state)
-    @create_book = CreateBook.new(@state)
-    @create_rental = CreateRental.new(@state)
-    @list_rentals = ListRentals.new(@state)
-    @exit = Exit.new(@state)
+    @people = ListPeople.new(state)
+    @person = CreatePerson.new(state)
+    @list_books = ListBooks.new(state)
+    @create_book = CreateBook.new(state)
+    @create_rental = CreateRental.new(state)
+    @list_rentals = ListRentals.new(state)
+    @exit = Exit.new(state)
   end
 
   def execute(user_choice) # rubocop:disable Metrics/CyclomaticComplexity
