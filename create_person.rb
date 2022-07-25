@@ -1,6 +1,6 @@
 class CreatePerson
   def initialize(state)
-    @state = state
+    @people_list = state[:people_list]
   end
 
   def ask_person_details
@@ -32,13 +32,13 @@ class CreatePerson
 
   def create_student(age, name, permission_input)
     permission = permission_input == 'y'
-    @state[:people_list] << Student.new(age, name, parent_permission: permission)
+    @people_list << Student.new(age, name, parent_permission: permission)
     p 'Student created successfully'
     puts ''
   end
 
   def create_teacher(specialization, age, name)
-    @state[:people_list] << Teacher.new(specialization, age, name)
+    @people_list << Teacher.new(specialization, age, name)
     p 'Teacher created successfully'
     puts ''
   end
