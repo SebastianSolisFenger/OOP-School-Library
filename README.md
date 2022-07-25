@@ -31,6 +31,12 @@ Then run:
 bundle install
 ```
 
+Finally run
+
+```
+ruby main.rb
+```
+
 <!-- Open terminal and run ruby app in the command Line: -->
 
 
@@ -41,6 +47,13 @@ bundle install
 - GitHub: [@SebastianSolisFenger](https://github.com/SebastianSolisFenger)
 - LinkedIn: [@SebastianSolisFenger](https://www.linkedin.com/in/sebastiansolisfenger/)
 - Twitter:[@SolisFenger](https://twitter.com/SolisFenger)
+
+
+👤 **Amaury Elohir Pérez Merino**
+
+- GitHub: [@AmauryPermer](https://github.com/Trictonicmp)
+- LinkedIn: [@Amaury-Permer](https://www.linkedin.com/in/amaury-permer/)
+
 
 ## 🤝 Contributing
 
