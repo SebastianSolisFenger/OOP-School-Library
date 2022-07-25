@@ -11,4 +11,10 @@ class ListBooks
     end
     puts ''
   end
+
+  def list_books_with_index
+    @book_list.each_with_index do |book, index|
+      p "#{index}) Title: '#{book.title}', Author: #{book.author}"
+    end
+  end
 end

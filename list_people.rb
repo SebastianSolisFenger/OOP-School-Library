@@ -15,4 +15,10 @@ class ListPeople
     end
     puts ''
   end
+
+  def list_people_with_index
+    @people_list.each_with_index do |person, index|
+      p "#{index}) [#{person.class.name}] Name: '#{person.name}', ID: #{person.id}, Age: #{person.age}"
+    end
+  end
 end
