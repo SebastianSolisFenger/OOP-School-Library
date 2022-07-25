@@ -1,7 +1,6 @@
 class CreateBook
   def initialize(state)
-    @state = state
-    @book_list = @state[:book_list]
+    @book_list = state[:book_list]
   end
 
   def ask_book_details
