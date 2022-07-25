@@ -1,7 +1,6 @@
 class ListRentals
   def initialize(state)
-    @state = state
-    @people_list = @state[:people_list]
+    @people_list = state[:people_list]
   end
 
   def rentals_for_id
