@@ -1,1 +1,1 @@
-{"students":[{"name":"Name1","age":12,"permission":true},{"name":"Name2","age":122,"permission":true},{"name":"Name3","age":123,"permission":true}],"teachers":[{"name":"Name1","age":27,"specialization":"Spec1"},{"name":"Name2","age":68,"specialization":"Spec2"}]}
+{"students":[{"name":"Name1","age":12,"permission":true},{"name":"Name2","age":122,"permission":true},{"name":"Name3","age":123,"permission":true}],"teachers":[{"name":"Name1","age":27,"specialization":"Spec1"},{"name":"Name2","age":68,"specialization":"Spec2"},{"name":"Name3","age":48,"specialization":"Spec3"}]}

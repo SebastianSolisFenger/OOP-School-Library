@@ -1,5 +1,5 @@
-require './input'
-require './output'
+require_relative './input'
+require_relative './output'
 
 class StorageManager
   def initialize

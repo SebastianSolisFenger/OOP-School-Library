@@ -1,8 +1,8 @@
-require 'storage_manager'
+require_relative 'storage_manager'
 require_relative 'book'
-require './student'
-require './teacher'
-require './rental'
+require_relative './student'
+require_relative'./teacher'
+require_relative './rental'
 
 state = { book_list: [], people_list: [], rental_list: [], keep_going: true }
 
