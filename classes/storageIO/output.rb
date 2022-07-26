@@ -1,6 +1,5 @@
 require 'fileutils'
 require 'json'
-require './student'
 
 class Output
   def initialize(path)

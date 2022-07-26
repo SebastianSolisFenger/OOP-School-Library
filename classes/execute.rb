@@ -1,11 +1,10 @@
-require_relative './list_people'
-require_relative './app'
-require_relative './create_person'
-require_relative './list_books'
-require_relative './create_book'
-require_relative './create_rental'
-require_relative './list_rentals'
-require_relative './exit'
+require_relative './menu_options/list_people'
+require_relative './menu_options/create_person'
+require_relative './menu_options/list_books'
+require_relative './menu_options/create_book'
+require_relative './menu_options/create_rental'
+require_relative './menu_options/list_rentals'
+require_relative './menu_options/exit'
 
 class Execute
   def initialize(state)

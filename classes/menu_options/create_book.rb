@@ -1,3 +1,5 @@
+require_relative '../core/book'
+
 class CreateBook
   def initialize(state)
     @state = state
