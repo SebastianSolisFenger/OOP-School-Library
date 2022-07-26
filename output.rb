@@ -17,6 +17,7 @@ class Output
     books_hash = state[:books_list].map { |book| { title: book.title, author: book.author } }
     books_json = JSON.generate(books_hash)
     File.write("#{@path}/books.json", books_json)
+    #  File.open("#{@path}/books.json", 'w') { |f| f.write books_json }
   end
 end
 
