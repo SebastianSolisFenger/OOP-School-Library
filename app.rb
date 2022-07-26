@@ -6,8 +6,16 @@ class App
   attr_reader :user_options
 
   def initialize
-    @user_options = ['List all books', 'List all people', 'Create a person', 'Create a book', 'Create a rental',
-                     'List all rentals for a given person id', 'Exit']
+    @user_options = [
+      'List all books',
+      'List all people',
+      'Create a person',
+      'Create a book',
+      'Create a rental',
+      'List all rentals for a given person id',
+      'Exit'
+    ]
+
     @storage_manager = StorageManager.new
     @state = @storage_manager.fetch_data
     @exec = Execute.new(@state)
