@@ -1,5 +1,3 @@
-require_relative './app'
-
 class ListPeople
   def initialize(state)
     @people_list = state[:people_list]

@@ -1,3 +1,6 @@
+require_relative '../core/student'
+require_relative '../core/teacher'
+
 class CreatePerson
   def initialize(state)
     @people_list = state[:people_list]
