@@ -8,14 +8,13 @@ class Input
     @path = path
   end
 
-  def read_books(state)
+  def read_books()
     books_json = File.read("#{@path}/books.json")
     books_hash = JSON.parse(books_json)
-    books = books_hash.map { |book| Book.new(book['title'], book['author']) }
-    state[:book_list].concat(books)
+    books_hash.map { |book| Book.new(book['title'], book['author']) }
   end
 
-  def read_people(state)
+  def read_people()
     people_json = File.read("#{@path}/people.json")
     people_hash = JSON.parse(people_json)
     students = people_hash['students'].map do |student|
@@ -24,19 +23,18 @@ class Input
     teachers = people_hash['teachers'].map do |teacher|
       Teacher.new(teacher['age'], teacher['name'], teacher['specialization'])
     end
-    state[:people_list].concat(students).concat(teachers)
+    students.concat(teachers)
   end
 
-  def read_rentals(state)
+  def read_rentals(people_list, books_list)
     rentals_json = File.read("#{@path}/rentals.json")
     rentals_hash = JSON.parse(rentals_json)
-    rentals = rentals_hash.map do |rental|
+    rentals_hash.map do |rental|
       Rental.new(
         rental['date'],
-        state[:book_list].select { |book| book.title == rental['book'] } [0],
-        state[:people_list].select { |person| person.name == rental['person_name'] } [0]
+        books_list.select { |book| book.title == rental['book'] } [0],
+        people_list.select { |person| person.name == rental['person_name'] } [0]
       )
     end
-    state[:rental_list].concat(rentals)
   end
 end

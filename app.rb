@@ -8,13 +8,12 @@ class App
   def initialize
     @user_options = ['List all books', 'List all people', 'Create a person', 'Create a book', 'Create a rental',
                      'List all rentals for a given person id', 'Exit']
-    @state = { book_list: [], people_list: [], rental_list: [], keep_going: true }
     @storage_manager = StorageManager.new
+    @state = @storage_manager.fetch_data
     @exec = Execute.new(@state)
   end
 
   def run
-    @storage_manager.fetch_data(@state)
     while @state[:keep_going]
       p 'Please choose an option by entering a number:'
       @user_options.each_with_index do |option, index|

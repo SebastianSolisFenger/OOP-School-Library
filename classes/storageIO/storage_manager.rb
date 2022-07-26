@@ -8,14 +8,17 @@ class StorageManager
     @output = Output.new(@path)
   end
 
-  def do_fetch_work(state)
-    @input.read_books(state)
-    @input.read_people(state)
-    @input.read_rentals(state)
+  def do_fetch_work()
+    new_state = { book_list: [], people_list: [], rental_list: [], keep_going: true }
+    new_state[:book_list] = @input.read_books
+    new_state[:people_list] = @input.read_people
+    new_state[:rental_list] = @input.read_rentals(new_state[:people_list], new_state[:book_list])
+
+    new_state
   end
 
-  def fetch_data(state)
-    do_fetch_work(state) if Dir.exist?(@path)
+  def fetch_data()
+    return do_fetch_work if Dir.exist?(@path)
   end
 
   def save_data(state)
