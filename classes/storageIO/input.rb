@@ -1,3 +1,6 @@
+require_relative '../core/book'
+require_relative '../core/student'
+require_relative '../core/teacher'
 require 'json'
 
 class Input

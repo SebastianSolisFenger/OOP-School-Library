@@ -1,10 +1,5 @@
-require_relative './book'
-require_relative './person'
-require_relative './rental'
-require_relative './student'
-require_relative './teacher'
-require_relative './execute'
-require_relative './storage_manager'
+require_relative './classes/storageIO/storage_manager'
+require_relative './classes/execute'
 
 class App
   attr_accessor :book_list, :people_list
@@ -15,6 +10,7 @@ class App
                      'List all rentals for a given person id', 'Exit']
     @state = { book_list: [], people_list: [], rental_list: [], keep_going: true }
     @storage_manager = StorageManager.new
+    @exec = Execute.new(@state)
   end
 
   def run
@@ -25,7 +21,6 @@ class App
         p "#{index + 1} - #{option}"
       end
       user_choice = gets.chomp
-      @exec = Execute.new(@state)
       @exec.execute(user_choice)
     end
     @storage_manager.save_data(@state)

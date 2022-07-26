@@ -1,5 +1,5 @@
-require_relative 'list_books'
-require_relative 'list_people'
+require_relative './list_books'
+require_relative './list_people'
 
 class CreateRental
   def initialize(state)
