@@ -4,7 +4,7 @@ require_relative '../classes/core/classroom'
 describe Student do
   describe 'Constructor' do
     student = Student.new(16, 'Raul', parent_permission: false)
-    
+
     student_name = student.name
     student_age = student.age
     can_use_services = student.can_use_services?
@@ -30,11 +30,11 @@ describe Student do
     classroom = Classroom.new('Arts')
     student = Student.new(20, 'maximilianus', parent_permission: false)
 
-    student.add_to_classroom=(classroom)
+    student.add_to_classroom = (classroom)
     classroom_includes_student = classroom.students.include?(student)
     student_classroom = student.classroom
 
-    describe 'Check if classroom contains student "maximilianus" and student contains the classroom' do  
+    describe 'Check if classroom contains student "maximilianus" and student contains the classroom' do
       it 'returns true if student is in the classroom' do
         expect(classroom_includes_student).to be(true)
       end

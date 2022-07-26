@@ -10,7 +10,7 @@ describe Classroom do
     student_list_length = classroom.students.length
 
     it 'has a label property set to: "Microverse"' do
-      expect(classroom_label).to eql('Microverse')
+      expect(clsroom_label).to eql('Microverse')
     end
 
     it 'has a empty student list' do

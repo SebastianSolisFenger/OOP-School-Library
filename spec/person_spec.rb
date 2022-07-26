@@ -3,11 +3,11 @@ require_relative '../classes/core/person'
 describe Person do
   describe 'Constructor' do
     person = Person.new(20, 'John', parent_permission: false)
-    
+
     person_name = person.name
     person_age = person.age
     can_use_setvices = person.can_use_services?
-    
+
     it 'Creates a new person with name "John" with age 20 and no parent_permission' do
       expect(person_name).to eql('John')
       expect(person_age).to eql(20)
@@ -17,7 +17,7 @@ describe Person do
 
   describe 'Getters and Setters' do
     person = Person.new(20, 'John', parent_permission: false)
-    
+
     person_name = person.name
     person_age = person.age
 
