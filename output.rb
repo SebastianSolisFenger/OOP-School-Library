@@ -43,11 +43,3 @@ class Output
     File.write("#{@path}/rentals.json", rentals_json)
   end
 end
-
-# 1. Creates the directory @path if it doesn't exist.
-# 2. Creates the file books.json if it doesn't exist.
-# 3. Creates the file people.json if it doesn't exist.
-# 4. Creates the file rentals.json if it doesn't exist.
-# 1. It creates a hash of books with the title and author of each book.
-# 2. It converts the hash to JSON.
-# 3. It writes the JSON to a file called books.json

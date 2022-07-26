@@ -14,7 +14,6 @@ class App
     @user_options = ['List all books', 'List all people', 'Create a person', 'Create a book', 'Create a rental',
                      'List all rentals for a given person id', 'Exit']
     @state = { book_list: [], people_list: [], rental_list: [], keep_going: true }
-    # @exec = Execute.new(@state)
     @storage_manager = StorageManager.new
   end
 
