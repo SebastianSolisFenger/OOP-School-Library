@@ -16,6 +16,7 @@ describe Teacher do
   end
 
   teacher2 = Teacher.new('Chemistry', 16, 'Mario', parent_permission: false)
+
   can_use_services2 = teacher2.can_use_services?
 
   describe 'Can use services to always be true' do
